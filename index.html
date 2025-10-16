@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarot + IA · Atelier Oracle</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="Démo Tarot + IA : tirage, questions, interprétation instantanée. CSS modulaire, grille Flexbox.">
+</head>
+<body>
+  <header class="banner" aria-label="Bannière du site">
+    <div class="container">
+      <div class="copy">
+        <div class="kicker">
+          <span class="avatar"><img src="images/avatar.jpg" alt="Avatar du site"></span>
+          <span>Tarot + IA</span>
+        </div>
+        <h1>Voir le présent et l'avenir avec le Tarot et l'IA</h1>
+        <h2>CSS modulaire · Grille de cartes Flexbox · Exemple prêt à l'emploi</h2>
+        <div class="cta" role="group" aria-label="Actions principales">
+          <a href="#ask" class="btn btn-primary">Commencer le tirage</a>
+          <a href="#cards" class="btn btn-ghost">Voir les Arcanes majeurs</a>
+        </div>
+      </div>
+      <div class="card-preview radius shadow" aria-label="Aperçu : carte du jour">
+        <img src="images/the-sun.jpg" alt="Carte de Tarot : Le Soleil">
+        <div class="inside">
+          <strong>Carte du jour · LE SOLEIL</strong>
+          <div class="meta">Optimisme, joie, clarté et réussite.</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="ask" class="section" aria-label="Oracle IA">
+    <div class="container">
+      <h2>Pose ta question à l'Oracle IA</h2>
+      <p style="color:#cbd5e1; margin-top:6px;">Saisis ta question (amour, carrière, choix), puis clique pour recevoir une guidance instantanée.</p>
+
+      <form id="ai-form" class="surface radius shadow" style="padding:16px; display:flex; gap:12px; align-items:center; margin-top:16px;" aria-label="Formulaire de question">
+        <label class="visually-hidden" for="ai-question">Ta question</label>
+        <input id="ai-question" type="text" placeholder="Ex. : Dois-je changer de travail ?"
+               style="flex:1; height:48px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background:rgba(255,255,255,0.03); color:#e5e7eb; padding:0 14px; font-size:16px; outline:none;">
+        <button id="ai-button" class="btn btn-primary" type="submit">Guide-moi, s'il te plaît</button>
+      </form>
+
+      <div id="ai-output" class="surface radius" style="padding:18px; white-space:pre-wrap; margin-top:12px; min-height:80px; border:1px solid rgba(255,255,255,0.12);" aria-live="polite"></div>
+
+      <div class="hr"></div>
+      <div class="cards" aria-label="Exemples de cartes">
+        <div class="card surface">
+          <img src="images/the-sun.jpg" alt="Le Soleil">
+          <h3>Le Soleil — Clarté et réussite</h3>
+          <a href="#cards" class="btn btn-ghost">Voir</a>
+        </div>
+        <div class="card surface">
+          <img src="images/the-moon.jpg" alt="La Lune">
+          <h3>La Lune — Intuition et inconscient</h3>
+          <a href="#cards" class="btn btn-ghost">Voir</a>
+        </div>
+        <div class="card surface">
+          <img src="images/the-star.jpg" alt="L'Étoile">
+          <h3>L'Étoile — Espoir et guérison</h3>
+          <a href="#cards" class="btn btn-ghost">Voir</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cards" class="section" aria-label="Arcanes majeurs">
+    <div class="container">
+      <h2>Arcanes majeurs · Galerie</h2>
+      <p style="color:#cbd5e1; margin-top:6px;">Grille responsive en Flexbox, réutilisant <code>.card</code> et <code>.cards</code>.</p>
+
+      <div class="tarot-tiles" style="margin-top:16px;">
+        <div class="tarot-tile surface radius shadow" data-question="Comment saisir au mieux l'opportunité présente ?">
+          <img src="images/the-sun.jpg" alt="Le Soleil">
+          <div class="meta">
+            <h3>Le Soleil</h3>
+            <div>Clique pour un exemple « carrière »</div>
+          </div>
+        </div>
+        <div class="tarot-tile surface radius shadow" data-question="Quel est mon angle mort dans cette relation ?">
+          <img src="images/the-moon.jpg" alt="La Lune">
+          <div class="meta">
+            <h3>La Lune</h3>
+            <div>Clique pour un exemple « amour »</div>
+          </div>
+        </div>
+        <div class="tarot-tile surface radius shadow" data-question="Sur quoi devrais-je concentrer mon énergie ensuite ?">
+          <img src="images/the-star.jpg" alt="L'Étoile">
+          <div class="meta">
+            <h3>L'Étoile</h3>
+            <div>Clique pour un exemple « développement personnel »</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="survey" class="section" aria-label="Questionnaire">
+    <div class="container">
+      <h2>Remplis le questionnaire · Pour mieux te guider</h2>
+      <p style="color:#cbd5e1; margin-top:6px;">Laisse ta question et un peu de contexte ci-dessous — nous affinerons l'interprétation.</p>
+      <div style="margin-top:14px;" aria-label="Formulaire Typeform">
+        <iframe
+          src="https://form.typeform.com/to/iqu9PijJ"
+          style="width:100%;height:720px;border:0;border-radius:12px;"
+          title="Questionnaire Tarot + IA"
+          allow="camera; microphone; autoplay; encrypted-media;"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" aria-label="Pied de page">
+    <div class="container">
+      <div>© <span id="year"></span> Tarot + IA · Atelier Oracle</div>
+      <div style="margin-top:6px;">CSS modulaire : <code>avatar.css</code>, <code>button.css</code>, <code>banner.css</code>, <code>card.css</code>.</div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
+
